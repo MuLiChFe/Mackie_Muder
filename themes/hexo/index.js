@@ -112,7 +112,7 @@ const LayoutBase = props => {
             {/* 右侧栏 */}
             <SideRight
                 {...props}
-                className={`space-y-4 lg:w-80 pt-4 ${post ? 'lg:pt-0' : 'lg:pt-4'}`}
+                className={`w-full max-w-6xl undefined mt-6 px-3 mx-auto lg:flex lg:space-x-4 justify-center relative z-10 ${post ? 'lg:pt-0' : 'lg:pt-4'}`}
             />
             <div
             id='container-inner'
