@@ -108,18 +108,39 @@ const LayoutBase = props => {
         {/* 主区块 */}
         <main
           id='wrapper'
-          className={`${siteConfig('MATERY_HOME_BANNER_ENABLE', null, CONFIG) ? '' : 'pt-16'} flex-1 w-full py-8 md:px-8 lg:px-24 relative`}>
-          {/* 嵌入区域 */}
-          <div
-            id='container-slot'
-            className={`w-full ${fullWidth ? '' : 'max-w-6xl'} ${post && ' lg:max-w-3xl 2xl:max-w-4xl '} mt-6 px-3 mx-auto lg:flex lg:space-x-4 justify-center relative z-10`}>
-            {containerSlot}
-          </div>
-
+          className={`${siteConfig('HEXO_HOME_BANNER_ENABLE', null, CONFIG) ? '' : 'pt-16'} bg-hexo-background-gray dark:bg-black w-full py-8 md:px-8 lg:px-24 min-h-screen relative`}>
           <div
             id='container-inner'
-            className={`w-full min-h-fit ${fullWidth ? '' : 'max-w-6xl'} mx-auto lg:flex lg:space-x-4 justify-center relative z-10`}>
-            {children}
+            className={
+              (JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE'))
+                ? 'flex-row-reverse'
+                : '') +
+              ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'
+            }>
+            <div
+              className={`${className || ''} w-full ${fullWidth ? '' : 'max-w-4xl'} h-full overflow-hidden`}>
+              <Transition
+                show={!onLoading}
+                appear={true}
+                enter='transition ease-in-out duration-700 transform order-first'
+                enterFrom='opacity-0 translate-y-16'
+                enterTo='opacity-100'
+                leave='transition ease-in-out duration-300 transform'
+                leaveFrom='opacity-100 translate-y-0'
+                leaveTo='opacity-0 -translate-y-16'
+                unmount={false}>
+                {/* 主区上部嵌入 */}
+                {slotTop}
+
+                {children}
+              </Transition>
+            </div>
+
+            {/* 右侧栏 */}
+            <SideRight
+              {...props}
+              className={`space-y-4 lg:w-80 pt-4 ${post ? 'lg:pt-0' : 'lg:pt-4'}`}
+            />
           </div>
         </main>
 
