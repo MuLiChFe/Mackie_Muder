@@ -57,14 +57,6 @@ export default function SideRight(props) {
           />
         </Card>
       )}
-      {showTag && (
-        <Card>
-          <TagGroups tags={tags} currentTag={currentTag} />
-        </Card>
-      )}
-      {siteConfig('HEXO_WIDGET_LATEST_POSTS', null, CONFIG) && latestPosts && latestPosts.length > 0 && <Card>
-        <LatestPostsGroup {...props} />
-      </Card>}
 
       <Announcement post={notice}/>
 
