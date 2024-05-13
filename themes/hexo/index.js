@@ -115,10 +115,13 @@ const LayoutBase = props => {
                 className={`w-full max-w-6xl undefined mt-6 px-3 mx-auto lg:flex lg:justify-center relative z-10 ${post ? 'lg:pt-0' : 'lg:pt-4'}`}
             />
             <div
-              id='container-inner'
-              className={`w-full min-h-fit ${fullWidth ? '' : 'max-w-6xl'} mx-auto lg:flex lg:space-x-4 justify-center relative z-10`}>
-              {children}
-            </div>
+            id='container-inner'
+            className={
+              (JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE'))
+                ? 'flex-row-reverse'
+                : '') +
+              ' w-full mx-auto lg:flex lg:space-x-4 justify-center relative z-10'
+            }>
             <div
               className={`${className || ''} w-full ${fullWidth ? '' : 'max-w-4xl'} h-full overflow-hidden`}>
               <Transition
