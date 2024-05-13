@@ -1,7 +1,7 @@
 import { siteConfig } from '@/lib/config'
 import BlogPostCard from './BlogPostCard'
 import BlogPostListEmpty from './BlogPostListEmpty'
-import PaginationSimple from './PaginationSimple'
+import PaginationNumber from './PaginationNumber'
 
 /**
  * 文章列表分页表格
@@ -31,9 +31,7 @@ const BlogPostListPage = ({ page = 1, posts = [], postCount, siteInfo }) => {
             </div>
           ))}
         </div>
-        {showPagination && (
-          <PaginationSimple page={page} totalPage={totalPage} />
-        )}
+        {showPagination && <PaginationNumber page={page} totalPage={totalPage} />}
       </div>
     )
   }
