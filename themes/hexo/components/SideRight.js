@@ -46,9 +46,6 @@ export default function SideRight(props) {
 
   return (
     <div id='sideRight' className={className}>
-      <InfoCard {...props} />
-      {siteConfig('HEXO_WIDGET_ANALYTICS', null, CONFIG) && <AnalyticsCard {...props} />}
-
       {showCategory && (
         <Card>
           <div className='ml-2 mb-1 '>
@@ -80,7 +77,6 @@ export default function SideRight(props) {
 
         {rightAreaSlot}
         <FaceBookPage/>
-        <Live2D />
       </div>
 
     </div>
