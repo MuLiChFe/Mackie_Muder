@@ -82,16 +82,6 @@ export default function PostHero({ post, siteInfo }) {
               </div>
             )}
           </section>
-
-          <div className='mt-4 mb-1'>
-            {post.tagItems && (
-              <div className='flex justify-center flex-nowrap overflow-x-auto'>
-                {post.tagItems.map(tag => (
-                  <TagItemMini key={tag.name} tag={tag} />
-                ))}
-              </div>
-            )}
-          </div>
         </div>
       </header>
     </div>
