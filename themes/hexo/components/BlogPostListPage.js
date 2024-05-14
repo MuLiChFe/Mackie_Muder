@@ -21,9 +21,9 @@ const BlogPostListPage = ({ page = 1, posts = [], postCount, siteInfo }) => {
   } else {
     return (
       <div className='w-full'>
-        <div className='pt-6'></div>
+        <div></div>
         {/* 文章列表 */}
-        <div className='pt-4 flex flex-wrap pb-12'>
+        <div className='flex flex-wrap pb-12'>
           {posts?.map((post, index) => (
             <div key={post.id} className='xl:w-1/3 md:w-1/2 w-full p-4'>
               {' '}
