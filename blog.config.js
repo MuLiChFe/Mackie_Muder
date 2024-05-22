@@ -228,7 +228,7 @@ const BLOG = {
   //   ALGOLIA_RECREATE_DATA: process.env.ALGOLIA_RECREATE_DATA || process.env.npm_lifecycle_event === 'build', // 为true时重新构建索引数据; 默认在build时会构建
 
   PREVIEW_CATEGORY_COUNT: 16, // 首页最多展示的分类数量，0为不限制
-  PREVIEW_TAG_COUNT: 3, // 首页最多展示的标签数量，0为不限制
+  PREVIEW_TAG_COUNT: 16, // 首页最多展示的标签数量，0为不限制
 
   POST_TITLE_ICON: process.env.NEXT_PUBLIC_POST_TITLE_ICON || false, // 是否显示标题icon
   POST_DISABLE_GALLERY_CLICK:
