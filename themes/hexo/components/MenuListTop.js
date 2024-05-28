@@ -33,16 +33,6 @@ export const MenuListTop = props => {
     // { icon: 'fas fa-tag', name: locale.COMMON.TAGS, href: '/tag', show: siteConfig('MENU_TAG', null, CONFIG) }
   ]
 
-  if (customNav) {
-    links = links.concat(customNav)
-  }
-
-  for (let i = 0; i < links.length; i++) {
-    if (links[i].id !== i) {
-      links[i].id = i
-    }
-  }
-
   // 如果 开启自定义菜单，则覆盖Page生成的菜单
   if (siteConfig('CUSTOM_MENU')) {
     links = customMenu
