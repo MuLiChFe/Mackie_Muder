@@ -8,29 +8,6 @@ export const MenuListTop = props => {
   const { locale } = useGlobal()
 
   let links = [
-    {
-      id: 1,
-      icon: 'fa-solid fa-house',
-      name: locale.NAV.INDEX,
-      href: '/',
-      show: siteConfig('HEXO_MENU_INDEX', null, CONFIG)
-    },
-    {
-      id: 2,
-      icon: 'fas fa-search',
-      name: locale.NAV.SEARCH,
-      href: '/search',
-      show: siteConfig('HEXO_MENU_SEARCH', null, CONFIG)
-    },
-    {
-      id: 3,
-      icon: 'fas fa-archive',
-      name: locale.NAV.ARCHIVE,
-      href: '/archive',
-      show: siteConfig('HEXO_MENU_ARCHIVE', null, CONFIG)
-    }
-    // { icon: 'fas fa-folder', name: locale.COMMON.CATEGORY, href: '/category', show: siteConfig('MENU_CATEGORY', null, CONFIG) },
-    // { icon: 'fas fa-tag', name: locale.COMMON.TAGS, href: '/tag', show: siteConfig('MENU_TAG', null, CONFIG) }
   ]
 
   // 如果 开启自定义菜单，则覆盖Page生成的菜单
